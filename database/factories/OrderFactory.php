@@ -22,7 +22,11 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->title,
+            'description' => $this->faker->paragraph(4),
+            'discount' => rand(50, 80),
+            'total' => rand(500, 8000),
+            'user_id' => \App\Models\User::factory(),
         ];
     }
 }

@@ -22,7 +22,9 @@ class CategoryProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'product_id' => \App\Models\Product::inRandomOrder()->first(), 
+            'category_id' => \App\Models\Category::inRandomOrder()->first()
         ];
+        
     }
 }

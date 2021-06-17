@@ -22,7 +22,12 @@ class ShippingAddressFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'direction' => $this->faker->streetName,
+            'department' => $this->faker->buildingNumber,
+            'number' => $this->faker->buildingNumber,
+            'commune' => $this->faker->city,
+            'region' => $this->faker->state,
+            'order_id' => \App\Models\Order::inRandomOrder()->first()
         ];
     }
 }
