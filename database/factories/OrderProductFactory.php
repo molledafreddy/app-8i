@@ -22,7 +22,7 @@ class OrderProductFactory extends Factory
     public function definition()
     {
         return [
-            'price' => $this->faker->unique(true)->numberBetween (1, 50),
+            'price' => $this->faker->unique(true)->numberBetween (1, 5000),
             'quantity' => $this->faker->unique(true)->numberBetween (1, 50),
             'order_id' => \App\Models\Order::factory(),
             'product_id' => \App\Models\Product::factory(),

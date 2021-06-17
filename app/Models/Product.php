@@ -18,4 +18,18 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class, 'category_products', 'product_id', 'category_id');
     }
+
+    public function scopeSearch($query, $target)
+    {
+        if ($target != '') {
+            return $query->where('name', 'like', "%$target%")
+            ->orWhere('description', 'like', "%$target%")
+            ->orWhereHas(
+                'categories',
+                function ($query) use ($target) {
+                    $query->where('name', 'like', '%'.$target.'%');
+                }
+            );
+        }
+    }
 }
