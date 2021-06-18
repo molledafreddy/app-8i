@@ -70,10 +70,11 @@ The project is based on **PHP 7.3.28** you need to have run the following comman
 4. Run migration to create app-8i tables in database ```php artisan migrate```
 5. Run seeder to populate the state tables in the database ```php artisan db:seed```
 
+## unit tests
+command to run unit tests:
+1. Run unit tests ```vendor/bin/phpunit --color```
 
-## Pruebas de funcionalidad
-
-Todos los servicios requieren de **token** formato JWT firmado con issuer `https://auth.chileatiende.gob.cl` para retornar datos, de lo contrario retorna _No Autorizado_
+## Functionality tests
 
 > The request and parameters that are detailed next, were used in the DEVELOPMENT environment to carry out tests.  
 The fields with "" (double quotes) like ***string***, fields without quotes like ***numerical***, and those that contain square brackets [] like ***array***.  
